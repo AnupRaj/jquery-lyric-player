@@ -3,17 +3,11 @@
 	background: #1B1B1B;
 	border-radius: 4px;
 	box-shadow: 3px 3px 6px RGBA(0,0,0,.42);
-	height: 94px;
+	height: 64px;
 	width: 50%;
 	overflow: hidden;
 	padding-top: 2px;
 	position: absolute;
-}
-.lrc-wrap .lrc-block .no-lrc,
-.lrc-wrap .load-lrc
-{
-	height: 94px;
-	line-height: 94px;
 	text-align: center;
 }
 .lrc-wrap .lrc-block .lrc-line
@@ -21,9 +15,14 @@
 	color: #ccc;
 	display: block;
 	font: 24px "Georgia","Helvetica Neue","Helvetica","Microsoft YaHei","WenQuanYi Micro Hei","Helvetica Neue",Helvetica,Arial,sans-serif;
-	height: 30px;
-	line-height: 30px;
 	text-align: center;
+	width: 50%;
+    margin: 0 auto;
+    vertical-align:middle;
+    height:50px; 
+    line-height:50px; 
+    display: table-cell;
+    vertical-align: middle;
 }
 .lrc-wrap .lrc-block .color
 {

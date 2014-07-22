@@ -7,8 +7,7 @@
 	<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script><![endif]-->
 	<script type="text/javascript">document.documentElement.className+='js';</script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
-	<script src="jquery.caption.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="captionjs.css"/>
+	<script src="js/lyric.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="css/lyric.css"/>
 	<link rel="stylesheet" href="css/animate.css">
 </head>
@@ -19,125 +18,90 @@
 [ar:片雾烈火&大岛启之]  
 [al:蝉鸣之时]  
 [by:Jessie]
-[00:00.00]Why,or why not-片雾烈火 ひぐらしのなく顷に  
-[00:05.00]$ TESTING 18 seconds next
-[00:18.00]to get my happiness  
-[00:20.00]i had done everything  
-[00:25.05]but had done nothing  
-[00:27.00]to be blamed and accused of  
-[00:32.00]the sound of footsteps became  
-[00:35.00]louder everyday  
-[00:38.00]then i noticed the fact  
-[00:42.00]there was no time  
-[00:46.82]i was a believer in life  
-[00:50.00]to be myself always  
-[00:54.00]and was asking whether  
-[00:57.00]i would be alive  
-[01:00.73]give me a reason why not  
-[01:04.70]to adopt in this way  
-[01:08.00]or judge me to be guilty of  
-[01:12.00]so many incurable sins  
-[01:15.30]tell be why or why not  
-[01:19.00]complaining way too much  
-[01:22.00]maybe i overlooked something fatal for me  
-[02:03.30]the whole world was at a complete standsill  
-[02:09.50]and i was in fetters  
-[02:12.00]at the mercy of the mob  
-[02:16.70]the silent warning became louder everyday  
-[02:23.00]then i keep pretending not to hear  
-[02:31.00]its meaning had been in the eyes  
-[02:34.50]of beholder all along  
-[02:38.00]it had grown dark before i found a sign  
-[02:47.00]among the nonsense tragedies  
-[02:50.50]what on earth you are looking for?  
-[02:54.00]you only have to  
-[02:56.00]be honest to yourself  
-[02:59.00]and your own fate  
-[03:01.00]tell me why or why not  
-[03:05.00]complaining way too much  
-[03:08.00]maybe i overlooked something fatal for me  
-[03:45.00]there is nobody who knows  
-[03:53.00]there will be nobody  
-[04:00.00]except for me  
-[04:07.00]all the world has gone mad  
-[04:11.70]so what is forgiveness  
-[04:16.00]you are willing to withhold?  
-[04:19.00]what is the well-being  
-[04:23.00]you are willing to make?  
-[04:26.00]now what?so what?  
-[04:29.50]dont you come interrupt me  
-[04:33.00]oh please  
-[04:34.00]while i am  
-[04:35.50]interrupting myself
-	</script>
-	<script type="text/javascript">
-	$(document).ready(function() {
-		$("script[type='text/lryic']").each(function(index, value) {
-
-			var $elem = $(value);
-			var lrcFormat = $elem.text().trim(), 
-				lrcValue = lrcFormat.replace(/\[\d\d:\d\d.\d\d\]/g,""),
-				lrcArray = lrcValue.split("\n"),
-				lrcTimeline = new Array();
-			var lrcTitle, lrcAuthor, lrcMaxtime = 0, lrcGaptime = 5;
-            var html = '';
-
-            lrcArray[0].replace(/\[\w\w\:(.*?)\]/g,function(){
-                lrcTitle = arguments[1] || "";
-            });
-
-            lrcArray[1].replace(/\[\w\w\:(.*?)\]/g,function(){
-                lrcAuthor = arguments[1] || "";
-            });
-			lrcArray.splice(0, 4);
-            html = '<p class="lrc-line" data-timeLine="0"><span class="mr15">Title : ' + lrcTitle + '</span><span>Author:' + lrcAuthor + '</span></p>';
-
-            lrcFormat.replace(/\[(\d*):(\d*)([\.|\:]\d*)\]/g,function(){
-
-                var min = arguments[1] | 0, 
-                    sec = arguments[2] | 0, 
-                    realMin = min * 60 + sec;
-                lrcMaxtime = Math.max(lrcMaxtime, realMin + lrcGaptime);
-                lrcTimeline.push(realMin);
-            });
-            for(var i = 0; i < lrcTimeline.length; i++){
-                html += '<p class="lrc-line animated" data-timeLine="' + lrcTimeline[i] + '">' + lrcArray[i].trim() + '</p>';
-            }
-            html = '<div class="lrc-block">' + html + '</div>';
-            html = '<div class="lrc-wrap">' + html + '</div>';
-            $elem.after(html);
-            var current_time = 0;
-            var timer = setInterval(function() {
-            	current_time++;
-            	current_time %= lrcMaxtime;
-				lrcMove(lrcMaxtime, current_time);
-        	},1000);
-		});
-
-		function lrcMove(time_all, current_time){
-		    var lrcBox = $(".lrc-block"),
-		        timer,
-		        index,
-		        s = -1,
-		        m = 0;
-		    lrcBox.find('p').each(function(i, value) {
-				var dataTimeLine = parseInt($(value).attr("data-timeLine"));
-				if(dataTimeLine >= 0 && dataTimeLine == current_time){
-		            index = i;
-		            if(s != i) {
-		                s = i;
-		                lrcBox.find('p').each(function(index, value) {
-		                	$(value).css({'display':'none'});
-		                });
-		                if(index > 0){
-		                	$(value).css({'display':'block'});
-		                    $(value).addClass('fadeInUp');
-		                }
-		            }
-		        }
-		    });
-		}
-	});
+[00:00.00]
+[00:00.67]回憶起來的
+[00:06.38]依舊是，家人的事情
+[00:09.98]
+[00:09.99]「AYANO是姐姐，
+[00:14.76]所以，要好好照顧大家哦」
+[00:21.24]
+[00:21.54]文乃的幸福理論
+[00:30.64]
+[00:30.65]作詞・作曲：じん(自然の敵P)
+[00:33.40]編曲：Ryosuke Nakanishi
+[00:36.21]歌：IA
+[00:39.01]
+[00:41.99]紅磚牆 小小的房子裏
+[00:47.62]竊竊私語 像是秘密作戰一樣
+[00:53.19]
+[00:53.20]被帶來的 三人鮮紅的眼中
+[00:58.67]隱藏著 大人所不知的過去
+[01:03.74]
+[01:04.31]帶著膽怯的表情說出 「我是怪物」
+[01:09.95]我卻說 「才不是那樣」
+[01:15.48]
+[01:15.49]「因為鮮紅是主角的顏色，
+[01:21.07]所以不用害怕，也可以的哦」
+[01:25.35]
+[01:25.36]煩惱著 該講什麼有趣的事
+[01:30.90]今天也努力地扮演著姐姐
+[01:37.54]
+[01:37.55]「快，看我的」
+[01:39.88]戴上了紅色的圍巾
+[01:44.11]
+[01:44.12]「像秘密組織一樣！」
+[01:47.66]
+[01:47.67]茜色，開始，浸染吧
+[01:53.13]雖然只是微小的「扮演英雄」
+[01:59.41]
+[01:59.42]「哪怕只有一點點，能讓你們再露出笑容的話」
+[02:04.82]今天也繼續當一家人吧
+[02:09.61]
+[02:09.91]祈願「幸福」吧，哪怕接下來的未來
+[02:17.26]是何等的，悲傷也好
+[02:21.79]
+[02:21.80]「這件事情要保密哦」
+[02:26.62]
+[02:26.63]歡鬧著日漸西沉
+[02:32.67]
+[02:41.92]春風再次來到 長大了的世界
+[02:47.61]蠻橫地歪曲 像是某人的陰謀一般
+[02:53.16]
+[02:53.17]落下然後消失 心愛之人的淚水
+[02:58.80]不被任何人發現地，逐漸變得漆黑
+[03:03.01]
+[03:03.02]覺察到 早已發狂的
+[03:06.45]但卻已經無法
+[03:09.30]
+[03:09.31]再向任何人傳達
+[03:15.16]
+[03:15.17]「討厭，討厭啊。崩壞什麼的」
+[03:19.66]
+[03:19.67]幸福終結的世界到來
+[03:25.17]
+[03:25.18]「茜色，拜託了。請不要再，繼續破壞任何一個人的未來了」
+[03:37.16]
+[03:37.17]低泣著，又再思量
+[03:42.01]繼續以笑容來隱藏
+[03:47.66]
+[03:47.67]「赤目色，如果是我的話
+[03:53.13]能夠拯救，某人的未來嗎」
+[03:59.48]
+[03:59.49]這是笨拙，而又可悲的
+[04:04.32]孤身一人的作戰
+[04:09.92]
+[04:28.11]我消失了  那一日的秘密組織
+[04:33.67]有好好地  笑著生活著嗎
+[04:39.16]
+[04:39.17]大家，一定會生我的氣的吧
+[04:43.49]可是，我有好好地變成「姐姐」吧
+[04:49.36]
+[04:49.37]試著回想起來吧
+[04:53.95]那句喜歡的言語
+[04:58.73]
+[04:58.74]「幸福」真是不可思議
+[05:03.67]又能再，喜歡上明天了
+[05:10.74]
 	</script>
 </body>
 </html>
